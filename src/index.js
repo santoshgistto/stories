@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+//import App from './assets/src/edit-story/editorApp';
+//import App from './assets/src/dashboard/app';
+
+
+//<App  config={{"storyId":1}}/>
 
 ReactDOM.render(
   <React.StrictMode>
