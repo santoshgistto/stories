@@ -40,7 +40,7 @@ import { HighlightsProvider } from '../../app/highlights';
 import LayoutProvider from '../../app/layout/layoutProvider';
 
 const Editor = withOverlay(styled.section.attrs({
-  'aria-label': __('Web Stories Editor', 'web-stories'),
+  'aria-label': __('Web Stories Editor', 'stories'),
 })`
   font-family: ${({ theme }) => theme.DEPRECATED_THEME.fonts.body1.family};
   font-size: ${({ theme }) => theme.DEPRECATED_THEME.fonts.body1.size};

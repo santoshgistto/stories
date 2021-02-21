@@ -46,7 +46,7 @@ const PAGE_LAYOUTS = {
 };
 
 function LibraryProvider({ children }) {
-  const initialTab = MEDIA.id;
+  const initialTab = MEDIA3P.id;
   const [tab, setTab] = useState(initialTab);
   const [textSets, setTextSets] = useState({});
   const insertElement = useInsertElement();
@@ -57,8 +57,8 @@ function LibraryProvider({ children }) {
   // Order here is important, as it denotes the actual visual order of elements.
   const tabs = useMemo(
     () => [
-      MEDIA,
-      MEDIA3P,
+   //   MEDIA,
+     MEDIA3P,
       ...(tab === TEXT.id ? [TEXT] : [{ icon: TextIcon, id: 'text' }]),
       SHAPES,
       ...(showElementsTab ? [ELEMS] : []),

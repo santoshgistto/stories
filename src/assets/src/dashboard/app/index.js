@@ -150,6 +150,7 @@ const AppContent = () => {
           path={APP_ROUTES.STORY_ANIM_TOOL}
           component={<StoryAnimTool />}
         />
+
       </PageContent>
     </AppFrame>
   );

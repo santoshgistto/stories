@@ -59,6 +59,7 @@ const getFontDeclarations = (pages) => {
       map.set(service, serviceMap);
 
       const fontObj = serviceMap.get(family) || { family, variants: [] };
+      console.log("getFontDeclarations content:: ",content)
 
       const contentVariants = getFontVariants(content);
 

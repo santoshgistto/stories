@@ -37,9 +37,11 @@ export const ApiContext = createContext({ state: {}, actions: {} });
 export default function ApiProvider({ children }) {
   const { api, editStoryURL, cdnURL, encodeMarkup } = useConfig();
 
+
   const { currentUser, api: usersApi } = useUsersApi(dataAdapter, {
     currentUserApi: api.currentUser,
   });
+  console.log("currentUser :: ",currentUser)
 
   const { templates, api: templateApi } = useTemplateApi(dataAdapter, {
     cdnURL,

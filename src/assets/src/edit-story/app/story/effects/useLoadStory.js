@@ -106,6 +106,9 @@ function useLoadStory({ storyId, shouldLoad, restore, isDemo }) {
           storyDataRaw && migrate(storyDataRaw, storyDataRaw.version || 0);
         const pages =
           storyData?.pages?.length > 0 ? storyData.pages : [createPage()];
+          console.log("useLoadStory post  :: ", post)
+          console.log("useLoadStory storyData  :: ", storyData)
+          console.log("useLoadStory pages  :: ", pages)
 
         // Initialize color/style presets, if missing.
         if (!globalStoryStyles.colors) {

@@ -231,6 +231,9 @@ const CardPreviewContainer = ({
             </Button>
           </ActionContainer>
         )}
+        {
+          console.log("bottomAction.targetAction :: ",bottomAction.targetAction)
+        }
         {bottomAction?.label ? (
           <ActionContainer>
             <Button

@@ -44,7 +44,7 @@ function Preview() {
     isUploading: state.state.isUploading,
   }));
 
-  console.log("preivew link santosh: ",saveStory)
+  console.log("preivew link santosh: ",previewLink)
 
   const [previewLinkToOpenViaDialog, setPreviewLinkToOpenViaDialog] = useState(
     null
@@ -56,6 +56,8 @@ function Preview() {
    */
   const openPreviewLink = useCallback(() => {
     trackEvent('preview_story');
+
+    console.log("previewLink ::",previewLink)
 
     // Start a about:blank popup with waiting message until we complete
     // the saving operation. That way we will not bust the popup timeout.

@@ -49,7 +49,7 @@ import { GlobalStyle as CalendarStyle } from './components/form/dateTime/calenda
 import KeyboardOnlyOutlines from './utils/keyboardOnlyOutline';
 import { MetaBoxesProvider } from './integrations/wordpress/metaBoxes';
 
-function App({ config }) {
+function EditorApp({ config }) {
   const { storyId, isRTL } = config;
   console.log("santosh:: storyid  ::", storyId)
   return (
@@ -58,7 +58,6 @@ function App({ config }) {
         <ErrorBoundary>
           <ConfigProvider config={config}>
             <APIProvider>
-              <StatusCheck />
               <FileProvider>
                 <Media3pApiProvider>
                   <HistoryProvider size={50}>
@@ -98,8 +97,8 @@ function App({ config }) {
   );
 }
 
-App.propTypes = {
+EditorApp.propTypes = {
   config: PropTypes.object.isRequired,
 };
 
-export default App;
+export default EditorApp;

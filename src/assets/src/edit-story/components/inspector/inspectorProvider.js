@@ -112,6 +112,7 @@ function InspectorProvider({ children }) {
 
   const loadUsers = useCallback(() => {
     if (!isUsersLoading && users.length === 0) {
+      console.log("loadUeser")
       setIsUsersLoading(true);
       getAuthors()
         .then((data) => {

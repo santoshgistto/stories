@@ -81,6 +81,7 @@ function PageLayoutsPane(props) {
       })),
     []
   );
+  console.log("PageLayoutsPane pageLayouts ::", JSON.stringify(pageLayouts))
 
   const filteredPages = useMemo(
     () =>

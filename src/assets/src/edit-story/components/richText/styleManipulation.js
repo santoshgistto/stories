@@ -35,11 +35,16 @@ import { getAllStyleSetsInSelection } from './draftUtils';
  */
 export function getPrefixStyleForCharacter(styles, prefix) {
   const list = styles.toArray().map((style) => style.style ?? style);
-  const matcher = (style) => style && style.startsWith(prefix);
+ /* const matcher = (style) => {
+    console.log("getPrefixStyleForCharacter style > ",style)
+    console.log("getPrefixStyleForCharacter prefix :: ",prefix)
+
+    return style && style[0].startsWith(prefix);
+  }
   if (!list.some(matcher)) {
     return NONE;
-  }
-  return list.find(matcher);
+  }*/
+  return NONE // list.find(matcher);
 }
 
 /**
@@ -94,8 +99,11 @@ export function getPrefixStylesInSelection(editorState, prefix) {
   const selection = editorState.getSelection();
   const styleSets = getAllStyleSetsInSelection(editorState);
   if (selection.isCollapsed() || styleSets.length === 0) {
+    let styles=  editorState.getCurrentInlineStyle()
+    console.log("getPrefixStylesInSelection styles :: ", styles);
+    console.log("getPrefixStylesInSelection prefix :: ", prefix);
     return [
-      getPrefixStyleForCharacter(editorState.getCurrentInlineStyle(), prefix),
+      getPrefixStyleForCharacter(styles, prefix),
     ];
   }
 

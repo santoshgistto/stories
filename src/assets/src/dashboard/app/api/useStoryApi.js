@@ -311,6 +311,8 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi, encodeMarkup }) => {
 
       try {
         const { createdBy, pages, version } = template;
+        console.log("createStoryFromTemplate  editStoryURL:: ", editStoryURL)
+        console.log("createStoryFromTemplate  storyApi:: ", storyApi)
         const getStoryPropsToSave = await import(
           /* webpackChunkName: "chunk-getStoryPropsToSave" */ '../../../edit-story/app/story/utils/getStoryPropsToSave'
         );
@@ -329,6 +331,8 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi, encodeMarkup }) => {
           },
           flags,
         });
+
+
         const response = await dataAdapter.post(storyApi, {
           data: {
             ...storyPropsToSave,
@@ -340,6 +344,8 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi, encodeMarkup }) => {
             },
           },
         });
+
+        console.log("createStoryFromTemplate  post responsee:: ", response)
 
         dispatch({
           type: STORY_ACTION_TYPES.CREATE_STORY_FROM_TEMPLATE_SUCCESS,
